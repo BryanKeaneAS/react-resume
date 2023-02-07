@@ -2,43 +2,69 @@ import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
+import Payroll from "../assets/img/payroll.png";
+import HMS from "../assets/img/HMS.png";
+import Phonebook from "../assets/img/phonebook.png";
+import Iot from "../assets/img/Iot.png";
+import HouseAttr from "../assets/img/house-attrition.jpg";
+import HRanalysis from "../assets/img/HR-analytics.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import TrackVisibility from 'react-on-screen';
 import { ProjectCard } from './ProjectCard.js';
 
 export const Projects = () => {
-    const projects = [
+    const projects1 = [
         {
-            title: "Business Startup",
-            description: "Design & Development",
+            title: "Payroll Management System",
+            description: "Management System",
+            imgUrl: Payroll,
+        },
+        {
+            title: "Hospital Management System",
+            description: "Management System",
+            imgUrl: HMS,
+        },
+        {
+            title: "Phonebook Application",
+            description: "Management System",
+            imgUrl: Phonebook,
+        },
+    ];
+    const projects2 = [
+        {
+            title: "Humidity Measurement ThingSpeak",
+            description: "Data Analytics",
+            imgUrl: Iot,
+        },
+        {
+            title: "House Price Recommendation",
+            description: "Data Analytics",
+            imgUrl: HouseAttr,
+        },
+        {
+            title: "IBM Employee Attrition HR Analytics",
+            description: "Data Analytics",
+            imgUrl: HRanalysis,
+        },
+    ];
+    const projects3 = [
+        {
+            title: "Humidity Measurement ThingSpeak",
+            description: "Web Design",
             imgUrl: projImg1,
         },
         {
-            title: "Business Startup",
-            description: "Design & Development",
+            title: "House Price Recommendation",
+            description: "Web Design",
             imgUrl: projImg2,
         },
         {
-            title: "Business Startup",
-            description: "Design & Development",
-            imgUrl: projImg3,
-        },
-        {
-            title: "Business Startup",
-            description: "Design & Development",
-            imgUrl: projImg1,
-        },
-        {
-            title: "Business Startup",
-            description: "Design & Development",
-            imgUrl: projImg2,
-        },
-        {
-            title: "Business Startup",
-            description: "Design & Development",
+            title: "IBM Employee Attrition HR Analytics",
+            description: "Web Design",
             imgUrl: projImg3,
         },
     ];
+
     return (
         <section className="project" id="projects">
             <Container>
@@ -58,17 +84,17 @@ export const Projects = () => {
                                     <Nav.Link eventKey="first">Management System</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link eventKey="second">Web Design</Nav.Link>
+                                    <Nav.Link eventKey="second">Data Analytics</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link eventKey="third">Data Analytics</Nav.Link>
+                                    <Nav.Link eventKey="third">Web Design</Nav.Link>
                                 </Nav.Item>
                             </Nav>
                             <Tab.Content>
                                 <Tab.Pane eventKey="first">
                                     <Row>
                                         {
-                                            projects.map((project, index) => {
+                                            projects1.map((project, index) => {
                                                 return (
                                                     <ProjectCard
                                                         key={index}
@@ -82,7 +108,7 @@ export const Projects = () => {
                                 <Tab.Pane eventKey="second">
                                     <Row>
                                         {
-                                            projects.map((project, index) => {
+                                            projects2.map((project, index) => {
                                                 return (
                                                     <ProjectCard
                                                         key={index}
@@ -94,7 +120,18 @@ export const Projects = () => {
                                     </Row>
                                 </Tab.Pane>
                                 <Tab.Pane eventKey="third">
-                                    <p>lorem ipsum dolor sit amet, consectetur</p>
+                                    <Row>
+                                        {
+                                            projects3.map((project, index) => {
+                                                return (
+                                                    <ProjectCard
+                                                        key={index}
+                                                        {...project}
+                                                    />
+                                                )
+                                            })
+                                        }
+                                    </Row>
                                 </Tab.Pane>
                             </Tab.Content>
                         </Tab.Container>

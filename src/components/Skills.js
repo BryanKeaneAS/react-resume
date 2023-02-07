@@ -15,6 +15,9 @@ import 'react-circular-progressbar/dist/styles.css';
 
 /*********React Icon*********/
 import { FaBeer } from 'react-icons/fa';
+import { AiOutlineTeam } from "react-icons/ai";
+import { RiTeamFill } from "react-icons/ri";
+import { GiTalk } from "react-icons/gi";
 
 export const PercentageBar = ({ value }) => {
     return (
@@ -39,7 +42,7 @@ export const PercentageBar = ({ value }) => {
                             pathTransitionDuration: 1,
                             
                             // Can specify path transition in more detail, or remove it entirely
-                            pathTransition: 'none',
+                            // pathTransition: 'none',
                         })}
                     />
                 );
@@ -72,20 +75,32 @@ export const HardSkills = () => {
     return (
         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
             <div className="item">
-                <PercentageBar value={75} />
-                <h5>Web Development</h5>
-            </div>
-            <div className="item">
-                <PercentageBar value={50} />
-                <h5>Data Science</h5>
+                <PercentageBar value={85} />
+                <h5>SQL</h5>
             </div>
             <div className="item">
                 <PercentageBar value={60} />
-                <h5>UI/UX Design</h5>
+                <h5>JAVA</h5>
+            </div>
+            <div className="item">
+                <PercentageBar value={75} />
+                <h5>JavaScript</h5>
+            </div>
+            <div className="item">
+                <PercentageBar value={60} />
+                <h5>PHP</h5>
+            </div>
+            <div className="item">
+                <PercentageBar value={65} />
+                <h5>Python</h5>
             </div>
             <div className="item">
                 <PercentageBar value={90} />
-                <h5>Database Management</h5>
+                <h5>HTML/CSS</h5>
+            </div>
+            <div className="item">
+                <PercentageBar value={40} />
+                <h5>C++</h5>
             </div>
         </Carousel>
     )
@@ -101,7 +116,7 @@ export const SoftSkills = () => {
                         <div className={isVisible ? "animate__animated animate__fadeInLeft" : ""}>
                             <div class="soft-skill">
                                 <div>
-                                    <FaBeer className="icon" size={25} />
+                                    <AiOutlineTeam className="icon" size={25} />
                                 </div>
                                 <div>
                                     <h3>Teamwork</h3>
@@ -116,7 +131,7 @@ export const SoftSkills = () => {
                         <div className={isVisible ? "animate__animated animate__fadeInLeft" : ""}>
                             <div class="soft-skill">
                                 <div>
-                                    <FaBeer className="icon" size={25} />
+                                    <RiTeamFill className="icon" size={25} />
                                 </div>
                                 <div>
                                     <h3>Leadership</h3>
@@ -131,7 +146,7 @@ export const SoftSkills = () => {
                         <div className={isVisible ? "animate__animated animate__fadeInLeft" : ""}>
                             <div class="soft-skill">
                                 <div>
-                                    <FaBeer className="icon" size={25} />
+                                    <GiTalk className="icon" size={25} />
                                 </div>
                                 <div>
                                     <h3>Communication</h3>
