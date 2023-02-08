@@ -7,6 +7,7 @@ import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import React, { Component, useState } from 'react';
 import VisibilitySensor from "react-visibility-sensor";
 import TrackVisibility from 'react-on-screen';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 /*********CircularProgressBar*********/
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
@@ -18,6 +19,7 @@ import { FaBeer } from 'react-icons/fa';
 import { AiOutlineTeam } from "react-icons/ai";
 import { RiTeamFill } from "react-icons/ri";
 import { GiTalk } from "react-icons/gi";
+
 
 export const PercentageBar = ({ value }) => {
     return (
@@ -39,8 +41,8 @@ export const PercentageBar = ({ value }) => {
                             textSize: '18px',
 
                             // How long animation takes to go from one percentage to another, in seconds
-                            pathTransitionDuration: 1,
-                            
+                            pathTransitionDuration: 2,
+
                             // Can specify path transition in more detail, or remove it entirely
                             // pathTransition: 'none',
                         })}
@@ -111,49 +113,40 @@ export const SoftSkills = () => {
         <Container className="d-grid gap-3">
             <Row class="d-flex">
                 <Col>
-                <TrackVisibility>
-                    {({ isVisible }) =>
-                        <div className={isVisible ? "animate__animated animate__fadeInLeft" : ""}>
-                            <div class="soft-skill">
-                                <div>
-                                    <AiOutlineTeam className="icon" size={25} />
-                                </div>
-                                <div>
-                                    <h3>Teamwork</h3>
-                                </div>
+                    <AnimationOnScroll animateIn="animate__fadeInLeftBig" animateOut="animate__fadeOutLeftBig">
+                        <div class="soft-skill">
+                            <div>
+                                <AiOutlineTeam className="icon" size={25} />
                             </div>
-                        </div>}
-                </TrackVisibility>
+                            <div>
+                                <h3>Teamwork</h3>
+                            </div>
+                        </div>
+                    </AnimationOnScroll>
                 </Col>
                 <Col>
-                <TrackVisibility>
-                    {({ isVisible }) =>
-                        <div className={isVisible ? "animate__animated animate__fadeInLeft" : ""}>
-                            <div class="soft-skill">
-                                <div>
-                                    <RiTeamFill className="icon" size={25} />
-                                </div>
-                                <div>
-                                    <h3>Leadership</h3>
-                                </div>
+                    <AnimationOnScroll animateIn="animate__fadeInLeftBig" animateOut="animate__fadeOutLeftBig" delay={100}>
+                        <div class="soft-skill">
+                            <div>
+                                <RiTeamFill className="icon" size={25} />
                             </div>
-                        </div>}
-                </TrackVisibility>
+                            <div>
+                                <h3>Leadership</h3>
+                            </div>
+                        </div>
+                    </AnimationOnScroll>
                 </Col>
                 <Col>
-                <TrackVisibility>
-                    {({ isVisible }) =>
-                        <div className={isVisible ? "animate__animated animate__fadeInLeft" : ""}>
-                            <div class="soft-skill">
-                                <div>
-                                    <GiTalk className="icon" size={25} />
-                                </div>
-                                <div>
-                                    <h3>Communication</h3>
-                                </div>
+                    <AnimationOnScroll animateIn="animate__fadeInLeftBig" animateOut="animate__fadeOutLeftBig" delay={200}>
+                        <div class="soft-skill">
+                            <div>
+                                <GiTalk className="icon" size={25} />
                             </div>
-                        </div>}
-                </TrackVisibility>
+                            <div>
+                                <h3>Communication</h3>
+                            </div>
+                        </div>
+                    </AnimationOnScroll>
                 </Col>
             </Row>
             {/* <Row class="d-flex">
@@ -200,7 +193,7 @@ export const Skills = () => {
                     <div className="col-12">
                         <div className="skill-bx wow zoomIn">
                             <h2>Skills</h2>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br> Lorem Ipsum has been the industry's standard dummy text.</p>
+                            <p>Skills I have gained from my University, Internship, and Organization in developing a project and organizing an event in my university</p>
                             <Tab.Container id="projects-tabs" defaultActiveKey="first">
                                 <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                                     <Nav.Item>

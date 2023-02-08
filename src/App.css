@@ -348,7 +348,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .banner-fixed{
-  display:block;
+  min-height: 180px;
 }
 
 @keyframes updown {

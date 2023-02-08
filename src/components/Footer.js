@@ -14,7 +14,6 @@ export const Footer = () => {
           <MailchimpForm />
           <Col size={12} sm={6}>
             <FaReact size={50} color="white" />
-
           </Col>
           <Col size={12} sm={6} className="text-center text-sm-end">
             <div className="social-icon">

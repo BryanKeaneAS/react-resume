@@ -4,6 +4,8 @@ import { ArrowRightCircle } from 'react-bootstrap-icons';
 import headerImg from '../assets/img/header-img.svg';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
+import { TypeAnimation } from 'react-type-animation';
 
 export const Banner = () => {
     const [loopNum, setLoopNum] = useState(0);
@@ -46,32 +48,28 @@ export const Banner = () => {
             <Container>
                 <Row className="aligh-items-center">
                     <Col xs={12} md={6} xl={7}>
-                        <TrackVisibility>
-                            {({ isVisible }) =>
-                                <div className={isVisible ? "animate__animated animate__fadeIn banner-fixed" : "banner-fixed"}>
-                                    <span className="tagline">Welcome to my Portfolio</span>
-                                    <h1>Hi I'm Bryan Keane</h1>
-                                    <h1>
-                                        <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'>
-                                            <span className="wrap">{text}
-                                            </span>
+                        <AnimationOnScroll animateIn="animate__fadeIn" animateOut="animate__fadeOut">
+                            <span className="tagline">Welcome to my Portfolio</span>
+                            <div className="banner-fixed">
+                                <h1>
+                                    {"Hi I'm Bryan Keane"}<br></br>
+                                    <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'>
+                                        <span className="wrap">{text}
                                         </span>
-                                    </h1>
-                                    <p>I am a skilled and driven developer with a passion for creating intuitive and visually appealing websites that provide an optimal user experience. I have extensive experience in HTML, CSS, JavaScript and various front-end frameworks, as well as a strong understanding of responsive design and accessibility principles.</p>
-                                    <a href="#connect">
-                                        <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
-                                        {/* <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button> */}
-                                    </a>
-                                </div>}
-                        </TrackVisibility>
+                                    </span>
+                                </h1>
+                            </div>
+                            <p>I am a skilled and driven developer with a passion for creating intuitive and visually appealing websites that provide an optimal user experience. I have extensive experience in HTML, CSS, JavaScript and various front-end frameworks, as well as a strong understanding of responsive design and accessibility principles.</p>
+                            <a href="#connect">
+                                <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
+                                {/* <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button> */}
+                            </a>
+                        </AnimationOnScroll>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
-                        <TrackVisibility>
-                            {({ isVisible }) =>
-                                <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                                    <img src={headerImg} alt="Header Img" />
-                                </div>}
-                        </TrackVisibility>
+                        <AnimationOnScroll animateIn="animate__zoomInRight" animateOut="animate__fadeOut" delay={500}>
+                            <img src={headerImg} alt="Header Img" />
+                        </AnimationOnScroll>
                     </Col>
                 </Row>
             </Container>
